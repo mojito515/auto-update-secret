@@ -12,6 +12,8 @@
     pip:
       name: awscli
       extra_args: --upgrade --user
+  - name: Add path
+    command: echo "export PATH=~/.local/bin:$PATH" >> $HOME/.bashrc
   - name: Ensure AWS directory
     file:
       path: "{{ aws_config_home }}"
